@@ -1,17 +1,10 @@
-function makeTransaction(pricePerDroid, quantity, customerCredits){
-  let message;
-  const totalPrice = pricePerDroid * quantity;
-  const creditsLeft = customerCredits - totalPrice ;
-if (totalPrice <= customerCredits) {
-  message = `You ordered ${quantity} worth ${totalPrice} credits!`;
-} else {
-  message = `Insufficient funds!`;
-}
-  return message;
+function slugify(title) {
+  const lowerCase = title.toLowerCase();
+  const lowerSlug = lowerCase.split(" ").join("-");
+  return lowerSlug;
 }
 
-console.log(makeTransaction(3000, 5, 23000)); 
-console.log(makeTransaction(1000, 3, 15000)); 
-console.log(makeTransaction(5000, 10, 8000)); 
-console.log(makeTransaction(2000, 8, 10000));
-console.log(makeTransaction(500, 10, 5000));
+console.log(slugify("Arrays for begginers"));
+console.log(slugify("English for developer"));
+console.log(slugify("Ten secrets of JavaScript"));
+console.log(slugify("How to become a JUNIOR developer in TWO WEEKS"));
